@@ -30,6 +30,12 @@ def captcha(length):
         text += rcharacter
         rlen = randint(0, 8)
         draw.text((25*(i+1) + rlen, 15 + 2*rlen), rcharacter, (0, 0, 0), font)
+    for i in range(4):
+        x1 = randint(0, 200)
+        y1 = randint(0, 100)
+        x2 = randint(0, 200)
+        y2 = randint(0, 100)
+        draw.line((x1, y1, x2, y2), (0,0,0), randint(1,2))
     img.save("static/captcha/" + text + ".jpg")
     return text + ".jpg"
     
